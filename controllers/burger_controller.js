@@ -5,6 +5,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/api/burgers", function (req, res) {
+    // call the selectAll function from the ORM to get all db entries
     burger.selectAll(function (data) {
 
         res.json(data);
