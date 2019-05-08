@@ -12,5 +12,14 @@ router.get("/api/burgers", function (req, res) {
     });
 });
 
+router.get("/", function (req, res) {
+    burger.selectAll(function (data) {
+        var handlebarObj = {
+            burgers: data
+        };
+        res.render("index", handlebarObj);
+    });
+});
+
 // Export routes for server.js to use.
 module.exports = router;
