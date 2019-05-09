@@ -1,7 +1,9 @@
 <h1>Burgers</h1>
 <ul>
     {{#each burgers}}
-    {{burger_name}} <br>
+    {{#unless devoured}}
+    {{burger_name}} <button id="{{this.id}}" data-devoured="{{this.devoured}}">Eat It!</button><br>
+    {{/unless}}
     {{/each}}
 </ul>
 
@@ -10,3 +12,12 @@
     <input type="text" id="burgerAddText" name="burgerName"><br>
     <button type="submit" name="burgerAddButton">Add It!</button>
 </form>
+
+<h1>Devoured Burgers</h1>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{burger_name}}
+    {{/if}}
+    {{/each}}
+</ul>
