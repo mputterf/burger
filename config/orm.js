@@ -12,6 +12,17 @@ var orm = {
             // return result of the query to the calling function
             cb(res);
         });
+    },
+    insertOne: function (tableName, column, values, cb) {
+        console.log("colum orm: " + column);
+        console.log("values orm: " + values);
+        var query = "INSERT INTO ?? (??) VALUES (?)";
+        connection.query(query, [tableName, column, values], function (err, res) {
+            if (err) throw err;
+            console.log(res);
+
+            cb(res);
+        });
     }
 };
 

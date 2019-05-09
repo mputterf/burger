@@ -6,6 +6,13 @@ var burger = {
         orm.selectAll("burgers", function (res) {
             cb(res);
         });
+    },
+    insertOne: function (column, values, cb) {
+        console.log("Column: " + column);
+        console.log("Value: " + values);
+        orm.insertOne("burgers", column, values, function (res) {
+            cb(res);
+        });
     }
 };
 
