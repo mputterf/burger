@@ -25,12 +25,12 @@ var orm = {
         });
     },
     updateOne: function (tableName, column, columnVal, burgerID, cb) {
-        var query = "UPDATE ? SET ? = ? WHERE ?";
-        console.log("table name: " + tableName);
-        console.log("column: " + column);
-        console.log("column value: " + columnVal);
-        console.log("burger ID: " + burgerID);
-        connection.query(query, [tableName, column, columnVal, burgerID], function (err, res) {
+        var query = "UPDATE " + tableName + " SET " + column + " = " + columnVal + " WHERE id = " + burgerID;
+        // console.log("table name: " + tableName);
+        // console.log("column: " + column);
+        // console.log("column value: " + columnVal);
+        // console.log("burger ID: " + burgerID);
+        connection.query(query, function (err, res) {
             if (err) throw err;
             console.log(res);
 
