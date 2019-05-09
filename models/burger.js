@@ -8,11 +8,16 @@ var burger = {
         });
     },
     insertOne: function (column, values, cb) {
-        console.log("Column: " + column);
-        console.log("Value: " + values);
+        // console.log("Column: " + column);
+        // console.log("Value: " + values);
         orm.insertOne("burgers", column, values, function (res) {
             cb(res);
         });
+    },
+    updateOne: function (column, columnVal, burgerID, cb) {
+        orm.updateOne("burgers", column, columnVal, burgerID, function (res) {
+            cb(res);
+        })
     }
 };
 
