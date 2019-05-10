@@ -19,8 +19,11 @@
                 {{#each burgers}}
                 {{#unless devoured}}
 
-                {{burger_name}} <button class="eatBurger" id="{{this.id}}" data-devoured="{{this.devoured}}">Eat
-                    It!</button><br>
+                <div class="burger">
+                    {{burger_name}} <button class="eatBurger" id="{{this.id}}" data-devoured="{{this.devoured}}">Eat
+                        It!</button>
+                </div>
+                <br>
 
                 {{/unless}}
                 {{/each}}
@@ -40,7 +43,10 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                {{burger_name}}<br>
+                <div class="burger eaten">
+                    {{burger_name}}
+                </div>
+                <br>
                 {{/if}}
                 {{/each}}
             </ul>
